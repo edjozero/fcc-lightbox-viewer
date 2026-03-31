@@ -11,7 +11,8 @@ closeBtn.addEventListener('click', closeLightbox);
 
 galleryItems.forEach(item => {
     item.addEventListener('click', () => {
-        lightboxImage.src = item.src;
+        lightboxImage.src = item.srcset;
+        lightboxImage.alt = item.alt;
 
         console.log(lightboxImage.src);
         
