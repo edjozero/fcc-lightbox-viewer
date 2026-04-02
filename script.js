@@ -7,8 +7,18 @@ function closeLightbox() {
     lightbox.style.display = "none";
 }
 
+
+// closing lightbox. first listener is for clicking out of image, second is for the button
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
 closeBtn.addEventListener('click', closeLightbox);
 
+
+// listener for opening lightbox
 galleryItems.forEach(item => {
     item.addEventListener('click', () => {
         lightboxImage.src = item.srcset;
